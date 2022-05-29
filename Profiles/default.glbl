@@ -9,4 +9,14 @@
       <initValue>'https://www.sehatq.com/'</initValue>
       <name>sehatqBaseUrl</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'app/sehat.apk'</initValue>
+      <name>sehatApps</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'com.she.sehatq'</initValue>
+      <name>sehatPackageName</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

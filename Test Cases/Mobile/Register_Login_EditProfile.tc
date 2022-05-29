@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Register_Login_EditProfile</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>5cd24564-a593-4870-92e0-e8aaf59b89a5</testCaseGuid>
+   <variable>
+      <defaultValue>'testsehatQ'</defaultValue>
+      <description></description>
+      <id>a6b22ee6-6609-4cf1-8c4e-698acc617cae</id>
+      <masked>false</masked>
+      <name>accountName</name>
+   </variable>
+   <variable>
+      <defaultValue>'cderew23QW'</defaultValue>
+      <description></description>
+      <id>c341d02c-ec85-45f1-90aa-118e5032f819</id>
+      <masked>false</masked>
+      <name>password</name>
+   </variable>
+   <variable>
+      <defaultValue>'082314400434'</defaultValue>
+      <description></description>
+      <id>37e2302b-73dd-4ff9-81e6-ecb86b38802f</id>
+      <masked>false</masked>
+      <name>noTelpon</name>
+   </variable>
+</TestCaseEntity>
