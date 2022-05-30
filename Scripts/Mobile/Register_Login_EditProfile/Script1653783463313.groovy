@@ -126,11 +126,14 @@ for(int i=0; i<calendar.size();i++) {
 
 String day = "18";
 String month = "May";
-String year = "1991";
+String year = "1989";
 
-MobileElement elDay = driver.findElementByXPath("//*[@class = 'android.widget.NumberPicker' and @index = '0']")
-MobileElement elMonth = driver.findElementByXPath("//*[@class = 'android.widget.NumberPicker' and @index = '1']")
-MobileElement elYear = driver.findElementByXPath("//*[@class = 'android.widget.NumberPicker' and @index = '2']")
+MobileElement elDay = driver.findElementByXPath("//*[@class = 'android.widget.NumberPicker' and @index = '0']/android.widget.EditText")
+System.out.println("day1111  "+elDay.getText())
+MobileElement elMonth = driver.findElementByXPath("//*[@class = 'android.widget.NumberPicker' and @index = '1']/android.widget.EditText")
+System.out.println("month1111  "+elMonth.getText())
+MobileElement elYear = driver.findElementByXPath("//*[@class = 'android.widget.NumberPicker' and @index = '2']/android.widget.EditText")
+System.out.println("year1111  "+elYear.getText())
 
 boolean isScroll=true
 
@@ -172,5 +175,3 @@ Mobile.setText(findTestObject('Mobile/ProfilePage/noIdentitas_field',[('packageN
 Mobile.tap(findTestObject('Object Repository/Mobile/ProfilePage/lanjut_btn',[('packageName') : GlobalVariable.sehatPackageName]), 10)
 
 Mobile.delay(5)
-
-Mobile.closeApplication()
