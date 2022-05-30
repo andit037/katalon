@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MobileElementEntity>
    <description></description>
-   <name>PengaturanAplikasi_btn</name>
+   <name>noIdentitas_field</name>
    <tag></tag>
-   <elementGuidId>e75399b4-7a0d-45f3-81c8-6a9da2f137a9</elementGuidId>
+   <elementGuidId>27e4f68f-b006-4699-918c-b2850dc62e39</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
-   <locator>(//android.widget.TextView[@text='Pengaturan Aplikasi'])</locator>
+   <locator>(//android.widget.EditText[@text='No. Identitas'])</locator>
    <locatorStrategy>XPATH</locatorStrategy>
 </MobileElementEntity>

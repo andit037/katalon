@@ -26,4 +26,11 @@
       <masked>false</masked>
       <name>noTelpon</name>
    </variable>
+   <variable>
+      <defaultValue>'3454657453423456'</defaultValue>
+      <description></description>
+      <id>0d3c8e94-929e-4e54-8f15-fee4aeca357e</id>
+      <masked>false</masked>
+      <name>ktp</name>
+   </variable>
 </TestCaseEntity>

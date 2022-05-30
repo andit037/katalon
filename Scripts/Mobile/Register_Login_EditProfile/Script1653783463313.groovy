@@ -17,9 +17,17 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import java.sql.Timestamp;
+import org.openqa.selenium.By
+import com.kms.katalon.core.mobile.keyword.internal.MobileDriverFactory
+import io.appium.java_client.AppiumDriver
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.JavascriptExecutor
+import io.appium.java_client.android.AndroidDriver
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.MobileBy
 
 //Launch the app
- 
+
 Mobile.startExistingApplication(GlobalVariable.sehatPackageName)
 
 Mobile.waitForElementPresent(findTestObject('Mobile/HomePage/tidak_btn',[('packageName') : GlobalVariable.sehatPackageName]), 10)
@@ -64,21 +72,62 @@ Mobile.setText(findTestObject('Mobile/ProfilePage/noTelpon_field',[('packageName
 
 Mobile.tap(findTestObject('Mobile/ProfilePage/dob_btn',[('packageName') : GlobalVariable.sehatPackageName]), 10)
 
-String day = Mobile.getText(findTestObject('Mobile/ProfilePage/day'),10)
-String month = Mobile.getText(findTestObject('Mobile/ProfilePage/month'),10)
-String year = Mobile.getText(findTestObject('Mobile/ProfilePage/year'),10)
+AppiumDriver driver = MobileDriverFactory.getDriver()
 
-System.out.println("day "+day+" month "+month+" year "+year)
+List <WebElement> calendar = driver.findElementsById("android:id/numberpicker_input")
 
-String dob = "1 Jan 2021"
-String dateBirth = dob.split(" ")[0]
-String monthBirth = dob.split(" ")[1]
-String yearBirth = dob.split(" ")[2]
+//Get date-Now
+for(int i=0; i<calendar.size();i++) {
+	System.out.println(calendar.get(i).getText())
+} 
 
-System.out.println("dateBirth "+dateBirth+" monthBirth "+monthBirth+" yearBirth "+yearBirth)
+String day = "18";
+String month = "May";
+String year = "1991";
 
-while(!day.equals(dateBirth)) {
+MobileElement elDay = driver.findElementByXPath("//*[@class = 'android.widget.NumberPicker' and @index = '0']")
+MobileElement elMonth = driver.findElementByXPath("//*[@class = 'android.widget.NumberPicker' and @index = '1']")
+MobileElement elYear = driver.findElementByXPath("//*[@class = 'android.widget.NumberPicker' and @index = '2']")
 
-	day = Mobile.getText(findTestObject('Mobile/ProfilePage/day'),10)
+boolean isScroll=true
+
+while(isScroll) {
+	if(!(elDay.getText()).equals(day)) {
+		elDay = driver.findElement(MobileBy.AndroidUIAutomator(
+			"new UiScrollable(new UiSelector().scrollable(true).instance(0))"+
+			".scrollBackward(2).scrollIntoView(new UiSelector().className(\"android.widget.EditText\")"+
+			".resourceId(\"android:id/numberpicker_input\"))"))
+		System.out.println("day    "+elDay.getText())
+	}else if(!(elMonth.getText()).equals(month)) {
+		elMonth = driver.findElement(MobileBy.AndroidUIAutomator(
+			"new UiScrollable(new UiSelector().scrollable(true).instance(1))"+
+			".scrollBackward(2).scrollIntoView(new UiSelector().className(\"android.widget.EditText\")"+
+			".resourceId(\"android:id/numberpicker_input\").instance(1))"))
+		System.out.println("month  "+elMonth.getText())
+	}else if(!(elYear.getText()).equals(year)) {
+		elYear = driver.findElement(MobileBy.AndroidUIAutomator(
+			"new UiScrollable(new UiSelector().scrollable(true).instance(2))"+
+			".scrollBackward(2).scrollIntoView(new UiSelector().className(\"android.widget.EditText\")"+
+			".resourceId(\"android:id/numberpicker_input\").instance(2))"))
+		System.out.println("year   "+elYear.getText())
+	}else
+		isScroll=false		
 }
 
+Mobile.tap(findTestObject('Mobile/ProfilePage/pilih-btn',[('packageName') : GlobalVariable.sehatPackageName]), 10)
+
+Mobile.tap(findTestObject('Mobile/ProfilePage/jenisKelamin_field',[('packageName') : GlobalVariable.sehatPackageName]), 10)
+
+Mobile.tap(findTestObject('Mobile/ProfilePage/perempuan',[('packageName') : GlobalVariable.sehatPackageName]), 10)
+
+Mobile.tap(findTestObject('Mobile/ProfilePage/jenisIdentitas_field',[('packageName') : GlobalVariable.sehatPackageName]), 10)
+
+Mobile.tap(findTestObject('Mobile/ProfilePage/ktp',[('packageName') : GlobalVariable.sehatPackageName]), 10)
+
+Mobile.setText(findTestObject('Mobile/ProfilePage/noIdentitas_field',[('packageName') : GlobalVariable.sehatPackageName]), ktp,10)
+
+Mobile.tap(findTestObject('Mobile/ProfilePage/lanjut_btn)',[('packageName') : GlobalVariable.sehatPackageName]), 10)
+
+Mobile.delay(5)
+
+System.out.println("selesai")

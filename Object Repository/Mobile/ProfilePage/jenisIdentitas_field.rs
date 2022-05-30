@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MobileElementEntity>
    <description></description>
-   <name>PengaturanAplikasi_btn</name>
+   <name>jenisIdentitas_field</name>
    <tag></tag>
-   <elementGuidId>e75399b4-7a0d-45f3-81c8-6a9da2f137a9</elementGuidId>
+   <elementGuidId>a5a574f7-96dc-48ab-88a8-fb9d012c073a</elementGuidId>
    <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
-   <locator>(//android.widget.TextView[@text='Pengaturan Aplikasi'])</locator>
+   <locator>(//android.widget.EditText[@text='Jenis Identitas'])</locator>
    <locatorStrategy>XPATH</locatorStrategy>
 </MobileElementEntity>
