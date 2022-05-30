@@ -65,6 +65,49 @@ Mobile.tap(findTestObject('Mobile/DaftarPage/checkBox_btn',[('packageName') : Gl
 
 Mobile.tap(findTestObject('Mobile/DaftarPage/daftar_btn',[('packageName') : GlobalVariable.sehatPackageName]), 10)
 
+Mobile.waitForElementPresent(findTestObject('Mobile/ProfilePage/lewati_btn',[('packageName') : GlobalVariable.sehatPackageName]), 10)
+
+Mobile.tap(findTestObject('Mobile/ProfilePage/lewati_btn',[('packageName') : GlobalVariable.sehatPackageName]), 10)
+
+Mobile.waitForElementPresent(findTestObject('Mobile/ProfilePage/yes_btn',[('packageName') : GlobalVariable.sehatPackageName]), 10)
+
+Mobile.tap(findTestObject('Mobile/ProfilePage/yes_btn',[('packageName') : GlobalVariable.sehatPackageName]), 10)
+
+//Confirm Log-Out
+
+Mobile.waitForElementPresent(findTestObject('Mobile/ProfilePage/threeVerticalDots',[('packageName') : GlobalVariable.sehatPackageName]), 10)
+
+Mobile.tap(findTestObject('Mobile/ProfilePage/threeVerticalDots',[('packageName') : GlobalVariable.sehatPackageName]), 10)
+
+Mobile.waitForElementPresent(findTestObject('Mobile/ProfilePage/PengaturanAplikasi_btn',[('packageName') : GlobalVariable.sehatPackageName]), 10)
+
+Mobile.tap(findTestObject('Mobile/ProfilePage/PengaturanAplikasi_btn',[('packageName') : GlobalVariable.sehatPackageName]), 10)
+
+Mobile.waitForElementPresent(findTestObject('Mobile/ProfilePage/logOut_btn',[('packageName') : GlobalVariable.sehatPackageName]), 10)
+
+Mobile.tap(findTestObject('Mobile/ProfilePage/logOut_btn',[('packageName') : GlobalVariable.sehatPackageName]), 10)
+
+Mobile.waitForElementPresent(findTestObject('Mobile/ProfilePage/yes_btn',[('packageName') : GlobalVariable.sehatPackageName]), 10)
+
+Mobile.tap(findTestObject('Mobile/ProfilePage/yes_btn',[('packageName') : GlobalVariable.sehatPackageName]), 10)
+
+Mobile.waitForElementPresent(findTestObject('Mobile/HomePage/tidak_btn',[('packageName') : GlobalVariable.sehatPackageName]), 10)
+
+Mobile.tap(findTestObject('Mobile/HomePage/tidak_btn',[('packageName') : GlobalVariable.sehatPackageName]),
+	10)
+
+Mobile.tap(findTestObject('Mobile/HomePage/profile_btn',[('packageName') : GlobalVariable.sehatPackageName]),
+	10)
+
+//Go to Login Page
+Mobile.waitForElementPresent(findTestObject('Mobile/DaftarPage/email_Field',[('packageName') : GlobalVariable.sehatPackageName]), 10)
+
+Mobile.setText(findTestObject('Mobile/DaftarPage/email_Field',[('packageName') : GlobalVariable.sehatPackageName]), emailName,10)
+
+Mobile.setText(findTestObject('Mobile/DaftarPage/password_Field',[('packageName') : GlobalVariable.sehatPackageName]), password,10)
+
+Mobile.tap(findTestObject('Mobile/LoginPage/login_btn',[('packageName') : GlobalVariable.sehatPackageName]), 10)
+
 //Editing to Profile Page
 Mobile.waitForElementPresent(findTestObject('Mobile/ProfilePage/noTelpon_field',[('packageName') : GlobalVariable.sehatPackageName]), 10)
 
@@ -126,8 +169,8 @@ Mobile.tap(findTestObject('Mobile/ProfilePage/ktp',[('packageName') : GlobalVari
 
 Mobile.setText(findTestObject('Mobile/ProfilePage/noIdentitas_field',[('packageName') : GlobalVariable.sehatPackageName]), ktp,10)
 
-Mobile.tap(findTestObject('Mobile/ProfilePage/lanjut_btn)',[('packageName') : GlobalVariable.sehatPackageName]), 10)
+Mobile.tap(findTestObject('Object Repository/Mobile/ProfilePage/lanjut_btn',[('packageName') : GlobalVariable.sehatPackageName]), 10)
 
 Mobile.delay(5)
 
-System.out.println("selesai")
+Mobile.closeApplication()
